@@ -29,10 +29,9 @@ public class AccountDto {
     private Date dateCreated;
     @JsonProperty("disabled")
     private Integer disabled;
-    /*@Valid
     @NotNull(message = "SECURITY_ERR_4")
-    @JsonProperty("employee")
-    private EmployeeDto employee;*/
+    @JsonProperty("employeeID")
+    private Long employeeID;
     @JsonProperty("roles")
     private List<RoleDto> roles;
 }
