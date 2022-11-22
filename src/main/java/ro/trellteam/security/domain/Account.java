@@ -27,18 +27,8 @@ public class Account {
     private Date dateCreated;
     @Column(name = "disabled")
     private Integer disabled;
-
-    @OneToOne(
-            targetEntity = Employee.class,
-            cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER
-    )
-    @JoinTable(
-            name = "te_tr_acc_emp_link",
-            joinColumns = @JoinColumn(name = "id_acc"),
-            inverseJoinColumns = @JoinColumn(name = "id_emp")
-    )
-    private Employee employee;
+    @Column(name = "emp_id")
+    private Long employeeID;
 
     @ManyToMany(
             targetEntity = Role.class,
